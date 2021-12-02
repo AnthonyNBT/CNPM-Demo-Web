@@ -2,6 +2,7 @@ const express = require('express');
 const { engine } = require('express-handlebars');
 
 const db = require('./config/db');
+const route = require('./routes/index');
 
 db.connect();
 
@@ -13,6 +14,11 @@ app.engine('hbs', engine({
 }));
 app.set('view engine', 'hbs');
 app.set("views", "./views");
+
+// Route Init
+route(app);
+
+
 
 app.get('/', (req, res) => {
     res.render('home');
