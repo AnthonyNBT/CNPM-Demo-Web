@@ -4,7 +4,7 @@
   "description": "Demo Web Sell Car",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect index.js",
+    "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^6.0.2",
+    "mongoose": "^6.0.14"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
