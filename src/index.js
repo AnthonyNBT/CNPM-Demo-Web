@@ -13,16 +13,10 @@ app.engine('hbs', engine({
     extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
-app.set("views", "./views");
+app.set("views", "./src/views");
 
 // Route Init
 route(app);
-
-
-
-app.get('/', (req, res) => {
-    res.render('home');
-});
 
 app.listen(port, () => {
     console.log(`Started at http://localhost:${port}`);
