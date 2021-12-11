@@ -7,6 +7,10 @@ class userController {
     createUser(req, res, next) {
         res.render('users/register');
     }
+
+    loginUser(req, res, next) {
+        res.render('users/login');
+    }
 }
 
 module.exports = new userController();
