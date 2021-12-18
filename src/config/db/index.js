@@ -1,13 +1,15 @@
-const mongoose = require('mongoose');
-    
-async function connect() {
-    try {
-        await mongoose.connect('mongodb://localhost:27017/CNPM');
+const mongoose = require("mongoose");
 
-        console.log('Connect Successfully');
-    } catch (error) {
-        console.log('Connect Failure');
-    }
+async function connect() {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://admin:Admin123@cnpm.6zsm4.mongodb.net/test"
+    );
+
+    console.log("Connect Successfully");
+  } catch (error) {
+    console.log("Connect Failure");
+  }
 }
 
 module.exports = { connect };
