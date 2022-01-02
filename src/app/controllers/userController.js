@@ -8,6 +8,7 @@ class userController {
     const message = req.flash("message");
     return res.render("users/register", { message: message[0] });
   }
+
   async createUser(req, res, next) {
     const { username, password, confirmPassword } = req.body;
     let hashedPassword;
@@ -38,6 +39,7 @@ class userController {
     const message = req.flash("message");
     return res.render("users/login", { message: message[0] });
   }
+  
   async loginUser(req, res, next) {
     const { username, password } = req.body;
     try {
@@ -55,6 +57,7 @@ class userController {
       throw error;
     }
   }
+
   logoutUser(req, res, next) {
     req.session.destroy((err) => {
       if (err) throw err;

@@ -1,11 +1,17 @@
-// const ... = require('../models/...');
-// const { multipleMongooseToObject } = require('../../uti/mongoose');
+const Car = require('../models/Car');
+const { multipleMongooseToObject } = require('../../uti/mongoose');
 
 class homeController {
 
     // [GET] /
     home(req, res, next) {
-        res.render('home');
+        Car.find({})
+            .then(cars => {
+                res.render('home', {
+                   cars: multipleMongooseToObject(cars) 
+                });
+            })
+            .catch(err => next(err));
     }
 }
 

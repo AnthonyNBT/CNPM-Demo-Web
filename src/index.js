@@ -2,6 +2,7 @@ const express = require("express");
 const { engine } = require("express-handlebars");
 const flash = require("express-flash");
 const session = require("express-session");
+const methodOverride = require("method-override");
 const db = require("./config/db");
 const route = require("./routes/index");
 
@@ -16,6 +17,7 @@ app.engine(
     extname: ".hbs",
   })
 );
+
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 app.use(express.json());
@@ -29,6 +31,9 @@ app.use(
   })
 );
 app.use(flash());
+app.use(methodOverride('_method'));
+
+
 // Route Init
 route(app);
 
