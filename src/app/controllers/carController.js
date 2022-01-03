@@ -26,7 +26,13 @@ class carController {
 
     // [GET] /cars/info/:id
     infoCar(req, res, next) {
-        res.render('cars/info');
+        Car.findById(req.params.id)
+            .then(car => {
+                res.render('cars/info', {
+                    car: mongooseToObject(car)
+                });
+            })
+            .catch(err => next(err));
     }
 
     // [GET] /cars/create
