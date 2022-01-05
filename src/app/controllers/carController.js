@@ -7,7 +7,7 @@ class carController {
         Car.find({})
             .then(cars => {
                 res.render('cars/show', {
-                    cars: multipleMongooseToObject(cars) 
+                    cars: multipleMongooseToObject(cars)
                 });
             })
             .catch(err => next(err));
